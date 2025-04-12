@@ -75,7 +75,7 @@ def process_link(link, index):
         except Exception as e:
             print(f"[{index}] Play button error: {e}")
 
-        time.sleep(150)
+        time.sleep(180)
         print(f"[{index}] Watched video for ~40 seconds.")
 
         try:
