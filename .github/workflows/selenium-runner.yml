@@ -30,4 +30,4 @@ jobs:
           pip install -r requirements.txt
 
       - name: Run Selenium automation
-        run: python videzz_video.py
+        run: python videzz_video2.py
