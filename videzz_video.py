@@ -75,7 +75,7 @@ def process_link(link, index):
         except Exception as e:
             print(f"[{index}] Play button error: {e}")
 
-        time.sleep(40)
+        time.sleep(90)
         print(f"[{index}] Watched video for ~40 seconds.")
 
         try:
@@ -83,7 +83,7 @@ def process_link(link, index):
             download_button = WebDriverWait(driver, 5).until(EC.element_to_be_clickable((By.XPATH, download_xpath)))
             download_button.click()
             print(f"[{index}] Download button clicked.")
-            time.sleep(3)
+            time.sleep(10)
         except:
             print(f"[{index}] Download button not found.")
 
