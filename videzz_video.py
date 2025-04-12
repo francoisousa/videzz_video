@@ -68,14 +68,23 @@ def process_link(link, index):
 
         try:
             play_xpath = "//button[@title='Play Video']"
-            play_button = WebDriverWait(driver, 10).until(EC.element_to_be_clickable((By.XPATH, play_xpath)))
-            play_button.click()
-            time.sleep(2)
-            print(f"[{index}] Video started.")
+            for attempt in range(3):
+                try:
+                    print(f"[{index}] Attempting to click Play Video - Attempt {attempt + 1}")
+                    play_button = WebDriverWait(driver, 10).until(
+                        EC.element_to_be_clickable((By.XPATH, play_xpath))
+                    )
+                    play_button.click()
+                    time.sleep(60)
+                    print(f"[{index}] Video started on attempt {attempt + 1}.")
+                    break
+                except Exception as e:
+                    print(f"[{index}] Attempt {attempt + 1} failed: {e}")
+                    time.sleep(1)
         except Exception as e:
-            print(f"[{index}] Play button error: {e}")
+            print(f"[{index}] Play button interaction failed after 3 attempts: {e}")
 
-        time.sleep(180)
+        time.sleep(600)
         print(f"[{index}] Watched video for ~40 seconds.")
 
         try:
