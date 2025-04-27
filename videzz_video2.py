@@ -70,15 +70,16 @@ def random_mouse_move(driver):
 
 # List of video links
 link_list = [
-    "https://vidoza.net/8193axbknvto.html",
-    "https://vidoza.net/49zpjy1rsjo1.html",
-    "https://vidoza.net/qaa0w816elml.html",
-    "https://vidoza.net/74eb28jag82j.html",
-    "https://vidoza.net/6ed6ivawned3.html",
-    "https://vidoza.net/dr7txnc1np5u.html",
-    "https://vidoza.net/v4hvfnl6l1zs.html",
-    "https://vidoza.net/vddxot92drvn.html"
-]
+    "https://vidoza.net/k797h50hhokx.html",
+    "https://vidoza.net/3xmvlfdq43p7.html",
+    "https://vidoza.net/w1wxwag6rybz.html",
+    "https://vidoza.net/fnaysowvdfv2.html",
+    "https://vidoza.net/g8uifhf4dff0.html",
+    "https://vidoza.net/lroc2wyoeliw.html",
+    "https://vidoza.net/lr05n5gdvi3d.html",
+    "https://vidoza.net/7q6nekacs7a3.html",
+    "https://vidoza.net/qhvdrfwfzepd.html",
+	]
 
 selected_links = random.sample(link_list, 2)
 selected_links = selected_links + selected_links
