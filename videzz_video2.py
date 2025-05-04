@@ -66,24 +66,44 @@ def random_mouse_move(driver):
         driver.execute_script("window.scrollBy(0, 250);")  # Cuộn trang xuống
         time.sleep(1)  # Thời gian nghỉ ngắn sau khi cuộn
 
+import requests
+
+# URL chứa file .txt
+url = "https://raw.githubusercontent.com/talblubClouby96/videzz_video/refs/heads/main/links.txt"
+
+# Tải nội dung từ URL
+response = requests.get(url)
+response.raise_for_status()  # Gây lỗi nếu tải thất bại
+
+# Chuyển mỗi dòng thành một phần tử trong list
+link_list = response.text.strip().splitlines()
+
+# Chọn ngẫu nhiên 2 link
+selected_links = random.sample(link_list, 2)
+
+# Nhân đôi danh sách đã chọn
+selected_links = selected_links + selected_links
+
+print(selected_links)
+
 
 
 # List of video links
-link_list = [
-    "https://vidoza.net/k797h50hhokx.html",
-    "https://vidoza.net/3xmvlfdq43p7.html",
-    "https://vidoza.net/w1wxwag6rybz.html",
-    "https://vidoza.net/fnaysowvdfv2.html",
-    "https://vidoza.net/g8uifhf4dff0.html",
-    "https://vidoza.net/lroc2wyoeliw.html",
-    "https://vidoza.net/lr05n5gdvi3d.html",
-    "https://vidoza.net/7q6nekacs7a3.html",
-    "https://vidoza.net/qhvdrfwfzepd.html",
-	]
-
-selected_links = random.sample(link_list, 2)
-selected_links = selected_links + selected_links
-print(len(selected_links))
+#link_list = [
+#    "https://vidoza.net/k797h50hhokx.html",
+#    "https://vidoza.net/3xmvlfdq43p7.html",
+#    "https://vidoza.net/w1wxwag6rybz.html",
+#    "https://vidoza.net/fnaysowvdfv2.html",
+#    "https://vidoza.net/g8uifhf4dff0.html",
+#    "https://vidoza.net/lroc2wyoeliw.html",
+#    "https://vidoza.net/lr05n5gdvi3d.html",
+#    "https://vidoza.net/7q6nekacs7a3.html",
+#    "https://vidoza.net/qhvdrfwfzepd.html",
+#	]
+#
+#selected_links = random.sample(link_list, 2)
+#selected_links = selected_links + selected_links
+#print(len(selected_links))
 def run_main_selenium():
 
     for link in selected_links:
